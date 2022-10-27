@@ -42,55 +42,55 @@ namespace Calculs
                 // traitement des choix
                 while (choix != 0)
                 {
+                    val1 = rand.Next(1, 10);
+                    val2 = rand.Next(1, 10);
                     if (choix == 1)
                     {
                         // choix de l'addition
-                        val1 = rand.Next(1, 10);
-                        val2 = rand.Next(1, 10);
+
                         while (!correct)
-                    {
-                        try
                         {
-                            correct = true;
+                            try
+                            {
+                                correct = true;
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Erreur de saisie : saisissez une nombre entier");
+                            }
                         }
-                        catch
+                        if (choix == 1)
                         {
-                            Console.WriteLine("Erreur de saisie : saisissez une nombre entier");
+                            // saisie de la réponse
+                            Console.Write(val1 + " + " + val2 + " = ");
+                            reponse = int.Parse(Console.ReadLine());
+                            // comparaison avec la bonne réponse
+                            solution = val1 + val2;
+                            if (reponse == solution)
+                            {
+                                Console.WriteLine("Bravo !");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Faux : " + val1 + " + " + val2 + " = " + solution);
+                            }
                         }
-                    }
-                    if (choix == 1)
-                    {
-                        // saisie de la réponse
-                        Console.Write(val1 + " + " + val2 + " = ");
-                        reponse = int.Parse(Console.ReadLine());
-                        // comparaison avec la bonne réponse
-                        solution = val1 + val2;
-                        if (reponse == solution)
+                        if (choix == 2)
                         {
-                            Console.WriteLine("Bravo !");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Faux : " + val1 + " + " + val2 + " = " + solution);
-                        }
-                    }
-                    if (choix == 2)
-                    {
-                        // choix de la multiplication
-                        val1 = rand.Next(1, 10);
-                        val2 = rand.Next(1, 10);
-                        // saisie de la réponse
-                        Console.Write(val1 + " x " + val2 + " = ");
-                        reponse = int.Parse(Console.ReadLine());
-                        // comparaison avec la bonne réponse
-                        solution = val1 * val2;
-                        if (reponse == solution)
-                        {
-                            Console.WriteLine("Bravo !");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Faux : " + val1 + " x " + val2 + " = " + solution);
+                            // choix de la multiplication
+                            // saisie de la réponse
+                            Console.Write(val1 + " x " + val2 + " = ");
+                            reponse = int.Parse(Console.ReadLine());
+                            // comparaison avec la bonne réponse
+                            solution = val1 * val2;
+                            if (reponse == solution)
+                            {
+                                Console.WriteLine("Bravo !");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Faux : " + val1 + " x " + val2 + " = " + solution);
+                            }
                         }
                     }
                 }
